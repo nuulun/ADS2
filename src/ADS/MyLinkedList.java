@@ -1,5 +1,7 @@
 package ADS;
 
+import java.util.Iterator;
+
 public class MyLinkedList<T> implements MyList<T> {
     private class MyNode {
         T data;
@@ -195,8 +197,8 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     @Override
-    public java.util.Iterator<T> iterator() {
-        return new java.util.Iterator<T>() {
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
             private MyNode current = head;
 
             @Override
@@ -214,14 +216,9 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     private MyNode getNode(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
-        MyNode current;
-        if (index < size / 2) {
-            current = head;
-            for (int i = 0; i < index; i++) current = current.next;
-        } else {
-            current = tail;
-            for (int i = size - 1; i > index; i--) current = current.prev;
+        MyNode current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
         }
         return current;
     }
