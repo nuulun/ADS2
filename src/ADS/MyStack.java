@@ -11,13 +11,13 @@ public class MyStack<T extends Comparable<T>> {
         list.add(item);
     }
 
-    public void pop() {
-        System.out.println(list.get(list.size() - 1));
+    public T pop() {
         list.remove(list.size() - 1);
+        return list.get(list.size() - 1);
     }
 
-    public void peek() {
-        System.out.println(list.get(list.size() - 1));
+    public T peek() {
+        return list.get(list.size() - 1);
     }
 
     public boolean isEmpty() {

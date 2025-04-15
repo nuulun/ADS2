@@ -12,15 +12,15 @@ public class MyQueue<T extends Comparable<T>> {
         list.addLast(element);
     }
 
-    public void dequeue() {
+    public T dequeue() {
 
-        System.out.println(list.get(0));
         list.removeFirst();
+        return list.get(0);
     }
 
-    public void peek() {
+    public T peek() {
 
-        System.out.println(list.getFirst());
+         return list.getFirst();
     }
 
     public boolean empty() {
