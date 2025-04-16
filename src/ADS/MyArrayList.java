@@ -116,12 +116,8 @@ public class MyArrayList<T extends Comparable<T>> implements MyList<T> {
 
     @Override
     public int lastIndexOf(Object object) {
-        for (int i = 0; i < size; i++) {
-            if (object == array[i]) {
-                return i;
-            }
-        }
-        return -1;
+
+        return size -1;
     }
 
     @Override
